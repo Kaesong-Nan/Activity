@@ -1,0 +1,131 @@
+Version: '1.0.0-SNAPSHOT'
+Item:
+  Future:
+    display: '&f[&2&l签到&f]'
+    material: PAPER
+    lore:
+      - '&6@&9future'
+      - day
+  Now:
+    display: '&f[&a&l签到&f]'
+    material: FEATHER
+    lore:
+      - '&6@&9now'
+      - day
+  Finish:
+    display: '&f[&e&l已签&f]'
+    material: FILLED_MAP
+    lore:
+      - '&6@&9finish'
+      - day
+  Miss:
+    display: '&f[&c&l未签&f]'
+    material: PAPER
+    lore:
+      - '&6@&9miss'
+      - day
+  Festival:
+    display: '&f[&b&l节日&f]'
+    material: DIAMOND
+    lore:
+      - '&6@&9festival'
+      - day
+  Blank:
+    display: ' '
+    material: WHITE_STAINED_GLASS_PANE
+    lore:
+
+  #修改lore时, value与前面冒号之间必须有一个空格, 能不修改尽量不修改。
+  Activity:
+    display: '&e&l活跃数据'
+    material: PLAYER_HEAD
+    lore:
+      - '&6@&9activity'
+      - '&3&l积分&f: value'
+      - '&3&l排行&f: value'
+      - ''
+      - '&6*&7点击打开积分界面'
+      - '&6*&7在线、签到、做任务都可获取积分'
+  Signin:
+    display: '&e&l签到数据'
+    material: WRITABLE_BOOK
+    lore:
+      - '&6@&9signin'
+      - '&3&l可补&7:&f value'
+      - '&3&l累计&7:&f value'
+      - '&3&l连续&7:&f value'
+      - ''
+      - '&6*&7点击打开签到奖励界面'
+  Playtime:
+    display: '&e&l在线时长'
+    material: CLOCK
+    lore:
+      - '&6@&9playtime'
+      - '&3&l本月&7:&f value'
+      - '&3&l今日&7:&f value'
+      - '&3&l持续&7:&f value'
+      - ''
+      - '&6*&7今日与总共在下线时统计'
+      - '&6*&7点击打开在线奖励界面'
+  Task:
+    display: '&e&l任务列表'
+    material: BOOKSHELF
+    lore:
+      - '&6@&9task'
+      - '&3&l进行&7:&f value'
+      - '&3&l完成&7:&f value'
+      - ''
+      - '&6*&7点击打开任务界面'
+  Close:
+    display: '&c&l关闭'
+    material: BARRIER
+    lore:
+      - '&6@&9close'
+      - ''
+      - '&6*&7点击关闭界面'
+  Back:
+    display: '&c&l返回'
+    material: BARRIER
+    lore:
+      - '&6@&9back'
+      - ''
+      - '&6*&7点击返回'
+  A_Reward:
+    display: '&e&l活跃宝箱'
+    material: CHEST
+    lore:
+      - '&6@&9a_reward'
+      - '&3&l品质&7:&f value'
+      - '&3&l花费&7:&f value'
+      - '&3&l项目&7:&f value'
+      - ''
+      - '&6*&7点击兑换'
+  S_Reward:
+    display: '&e&l签到奖励'
+    material: CHEST
+    lore:
+      - '&6@&9s_reward'
+      - '&3&l类型&7:&f value'
+      - '&3&l次数&7:&f value'
+      - '&3&l项目&7:&f value'
+      - ''
+      - '&6*&7点击兑换'
+  P_Reward:
+    display: '&e&l在线奖励'
+    material: CHEST
+    lore:
+      - '&6@&9p_reward'
+      - '&3&l类型&7:&f value'
+      - '&3&l时长&7:&f value'
+      - '&3&l项目&7:&f value'
+      - ''
+      - '&6*&7点击兑换'
+  Taskbook:
+    display: '&e&l任务书'
+    material: BOOK
+    lore:
+      - '&6@&9taskbook'
+      - '&3&l类型&7:&f value'
+      - '&3&l对象&7:&f value'
+      - '&3&l进度&7:&f value'
+      - '&3&l项目&7:&f value'

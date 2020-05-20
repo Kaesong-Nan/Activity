@@ -1,0 +1,7 @@
+Version: '1.0.0-SNAPSHOT'
+Title: '&f[&eScript&f]'
+Help:
+  - '帮助指令'
+PlayerCommand: '&c该指令只能由玩家使用!'
+Reloading: '&f配置文件重载中...'
+Reloaded: '&f配置文件重载完成!'
