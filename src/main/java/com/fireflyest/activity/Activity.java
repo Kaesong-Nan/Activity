@@ -2,7 +2,7 @@ package com.fireflyest.activity;
 
 import com.fireflyest.activity.command.ActivityCommand;
 import com.fireflyest.activity.data.YamlManager;
-import com.fireflyest.activity.event.EventListener;
+import com.fireflyest.activity.event.PlayerEventListener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.java.annotation.command.Command;
 import org.bukkit.plugin.java.annotation.plugin.Plugin;
@@ -24,7 +24,7 @@ public class Activity extends JavaPlugin {
     public void onEnable() {
         YamlManager.iniYamlManager(this);
 
-        this.getServer().getPluginManager().registerEvents( new EventListener(), this );
+        this.getServer().getPluginManager().registerEvents( new PlayerEventListener(), this );
 
         this.getCommand("activity").setExecutor(new ActivityCommand());
     }

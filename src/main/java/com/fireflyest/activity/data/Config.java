@@ -11,6 +11,8 @@ public class Config {
     private static FileConfiguration config;
 
     public static String VERSION;
+    public static boolean HEAD_SKIN;
+    public static int DEFAULT_CHANCE;
 
     public Config(FileConfiguration config){
         this.config = config;
@@ -19,6 +21,8 @@ public class Config {
 
     private void setUp(){
         VERSION = config.getString("Version");
+        HEAD_SKIN = config.getBoolean("DisplaySkin");
+        DEFAULT_CHANCE = config.getInt("DefaultChance");
     }
 
     public static void setKey(String key, Object value) {

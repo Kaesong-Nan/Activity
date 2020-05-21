@@ -140,8 +140,7 @@ public class ActivityItem {
      * @param player 玩家
      * @return ItemStack
      */
-    public static ItemStack createSkull(OfflinePlayer player){
-        ItemStack item = new ItemStack(Material.PLAYER_HEAD);
+    public static ItemStack createSkull(ItemStack item, OfflinePlayer player){
         SkullMeta meta = (SkullMeta) item.getItemMeta();
         meta.setOwningPlayer(player);
         item.setItemMeta(meta);

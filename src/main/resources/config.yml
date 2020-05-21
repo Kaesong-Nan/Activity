@@ -1,4 +1,7 @@
-Version: '1.0.0-SNAPSHOT'
+Version: '2.0.0-SNAPSHOT'
+DisplaySkin: true
+DefaultChance: 2
+
 Item:
   Future:
     display: '&f[&2&l签到&f]'
