@@ -2,6 +2,7 @@ package com.fireflyest.activity.time;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 /**
@@ -70,5 +71,14 @@ public class ActivityTime {
         return Calendar.getInstance(Locale.CHINA).getTime().getTime();
     }
 
+    public static int getMaxDay(){
+        return new GregorianCalendar().getActualMaximum(Calendar.DATE);
+    }
+
+    public static int getFirstDay(){
+        Calendar first = new GregorianCalendar();
+        first.set(Calendar.DAY_OF_MONTH, 1);
+        return first.get(Calendar.DAY_OF_WEEK);
+    }
 
 }

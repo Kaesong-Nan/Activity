@@ -19,7 +19,7 @@ import org.bukkit.entity.Player;
  * SHOW_ENTITY  显示一个实体的名字，ID和其他信息
  *
  */
-public class ScriptChat {
+public class ActivityChat {
 
     private static final TextComponent LEFT = new TextComponent("[");
     private static final TextComponent RIGHT = new TextComponent("]");
@@ -29,7 +29,7 @@ public class ScriptChat {
     private static final TextComponent ACCEPT = new TextComponent("✔接 受");
     private static final TextComponent REFUSE = new TextComponent("✘拒 绝");
 
-    private ScriptChat(){
+    private ActivityChat(){
 
     }
 

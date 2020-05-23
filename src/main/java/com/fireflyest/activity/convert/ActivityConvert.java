@@ -7,11 +7,11 @@ import org.bukkit.Location;
  * @author Fireflyest
  * ❤✦✧@❀❁❂☻☠☽⚒⚓⚔⚜⚝✈✂✄✘♯¶♩♪♫♬
  */
-public class ScriptConvert {
+public class ActivityConvert {
 
     private final static String BAR = "▎";
 
-    private ScriptConvert(){
+    private ActivityConvert(){
 
     }
 
@@ -40,7 +40,7 @@ public class ScriptConvert {
         long hour = (time - day * dd)/ hh;
         long minute = (time - day * dd - hour * hh )/ mi;
         long second = (time - day * dd - hour * hh - minute * mi )/ ss;
-        return day+","+hour+","+minute+","+second;
+        return day+"天"+hour+"时"+minute+"分"+second+"秒";
     }
 
     /**

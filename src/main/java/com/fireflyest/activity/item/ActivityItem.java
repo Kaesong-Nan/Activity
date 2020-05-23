@@ -101,7 +101,7 @@ public class ActivityItem {
 
     /**
      * 自定义物品
-     * @param material 材料类型
+     * @param item 物品
      * @return ItemStack
      * HIDE_ENCHANTS, 隐藏附魔
      * HIDE_ATTRIBUTES, 隐藏攻击属性
@@ -110,11 +110,10 @@ public class ActivityItem {
      * HIDE_PLACED_ON, 隐藏是否可放置
      * HIDE_POTION_EFFECTS; 隐藏药水属性
      */
-    public static ItemStack createCustomItem(Material material, ItemFlag... flags){
-        ItemStack item = new ItemStack(material);
+    public static ItemStack addItemFlags(ItemStack item){
         ItemMeta meta = item.getItemMeta();
-        meta.setUnbreakable(true);
-        meta.addItemFlags(flags);
+        if(meta == null)return item;
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_POTION_EFFECTS);
         item.setItemMeta(meta);
         return item;
     }

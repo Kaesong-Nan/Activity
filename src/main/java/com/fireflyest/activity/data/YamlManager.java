@@ -22,8 +22,13 @@ public class YamlManager {
     private static Map<String, FileConfiguration> playerData;
     private static Config config;
     private static Language lang;
+    private static boolean enable = false;
 
     private YamlManager(){
+    }
+
+    public static boolean isEnable(){
+        return enable;
     }
 
     /**
@@ -37,6 +42,7 @@ public class YamlManager {
         for(Player player : Bukkit.getOnlinePlayers()){
             setup("PlayerData", player.getName());
         }
+        enable = true;
     }
 
     /**

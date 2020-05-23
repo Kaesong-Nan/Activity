@@ -1,29 +1,79 @@
 package com.fireflyest.activity.event;
 
 import com.fireflyest.activity.data.YamlManager;
-import com.fireflyest.activity.manager.DataManager;
-import com.fireflyest.activity.manager.GuiManager;
-import com.fireflyest.activity.manager.OnlineManager;
-import com.fireflyest.activity.manager.YmlManager;
+import com.fireflyest.activity.manager.*;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.server.ServerLoadEvent;
 
 public class PlayerEventListener implements Listener {
 
     private static DataManager manager;
-    private static OnlineManager onlineManager;
 
     public PlayerEventListener(){
         manager = new YmlManager();
-        onlineManager = new OnlineManager(manager);
-        GuiManager.iniGuiManager();
+        OnlineManager.iniOnlineManager(manager);
+        GuiManager.iniGuiManager(manager);
+        ClickManager.iniClickManager(manager);
+        RewardManager.iniRewardManager(manager);
+        TaskManager.iniTaskManager(manager);
     }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         YamlManager.setup("PlayerData", event.getPlayer().getName());
-        onlineManager.playerJoin(event.getPlayer().getName());
+        OnlineManager.playerJoin(event.getPlayer());
+    }
+
+    @EventHandler
+    public void onInventoryClick(InventoryClickEvent event) {
+        if(event.getCurrentItem() == null) return;
+        Player player = (Player)event.getWhoClicked();
+        if(!event.getView().getTitle().contains("Activity")) return;
+        event.setCancelled(true);
+        ClickManager.playerClick(event.getCurrentItem(), player);
+    }
+
+    @EventHandler
+    public void onServerLoadEvent(ServerLoadEvent event) {
+        for(Player player : Bukkit.getOnlinePlayers()) {
+            OnlineManager.playerJoin(player);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent event) {
+        OnlineManager.savePlayerTime(event.getPlayer().getName());
+    }
+
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent event) {
+        Player player = event.getPlayer();
+        TaskManager.doTask(player, event.getBlock().getType().name(), "开采");
+    }
+
+    @EventHandler
+    public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
+        if(!event.getRightClicked().getType().isAlive())return;
+        TaskManager.doTask(event.getPlayer(), event.getRightClicked().getName(), "交谈");
+    }
+
+    @EventHandler
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
+        if(!event.getDamager().getType().name().equals("PLAYER"))return;
+        if(!event.getEntity().getType().isAlive())return;
+        LivingEntity entity = (LivingEntity)event.getEntity();
+        if(entity.getHealth() - event.getDamage() > 0)return;
+        TaskManager.doTask((Player)event.getDamager(), entity.getType().name().toUpperCase(), "击杀");
     }
 
 }

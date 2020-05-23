@@ -1,8 +1,9 @@
 package com.fireflyest.activity.manager;
 
-import java.util.List;
+import java.util.Set;
 
 public class JdbcManager implements DataManager{
+
     @Override
     public void setMonth(String name, int month) {
 
@@ -29,8 +30,13 @@ public class JdbcManager implements DataManager{
     }
 
     @Override
-    public List<Long> getOnlineTime(String name, int day) {
-        return null;
+    public long getOnlineTime(String name, int day) {
+        return 0;
+    }
+
+    @Override
+    public long getTotalTime(String name) {
+        return 0;
     }
 
     @Override
@@ -49,6 +55,11 @@ public class JdbcManager implements DataManager{
     }
 
     @Override
+    public int getTotalActivity(String name) {
+        return 0;
+    }
+
+    @Override
     public void addChance(String name, int chance) {
 
     }
@@ -59,12 +70,79 @@ public class JdbcManager implements DataManager{
     }
 
     @Override
-    public void addTask(String name, String task) {
+    public void addAddUp(String name) {
 
     }
 
     @Override
-    public List<String> getTaskLit(String name) {
+    public int getAddUp(String name) {
+        return 0;
+    }
+
+    @Override
+    public int getSeries(String name) {
+        return 0;
+    }
+
+    @Override
+    public void addTask(String name, String task, String progress) {
+
+    }
+
+    @Override
+    public String getTask(String name, String Task) {
         return null;
     }
+
+    @Override
+    public int getDidTask(String name) {
+        return 0;
+    }
+
+    @Override
+    public void updateTask(String name, String task) {
+
+    }
+
+    @Override
+    public Set<String> getTaskList(String name) {
+        return null;
+    }
+
+    @Override
+    public void clearData(String name) {
+
+    }
+
+    @Override
+    public boolean hasAReward(String name, String reward) {
+        return false;
+    }
+
+    @Override
+    public boolean hasPReward(String name, String reward) {
+        return false;
+    }
+
+    @Override
+    public boolean hasSReward(String name, String reward) {
+        return false;
+    }
+
+    @Override
+    public void addAReward(String name, String reward) {
+
+    }
+
+    @Override
+    public void addPReward(String name, String reward) {
+
+    }
+
+    @Override
+    public void addSReward(String name, String reward) {
+
+    }
+
+
 }

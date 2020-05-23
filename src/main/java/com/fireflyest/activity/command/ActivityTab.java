@@ -17,10 +17,12 @@ public class ActivityTab implements TabCompleter {
         list.add("help");
         list.add("add");
         list.add("rank");
+        list.add("task");
+        list.add("playtime");
     }
 
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args){
-        if(command.getName().equalsIgnoreCase("script")){
+        if(command.getName().equalsIgnoreCase("activity")){
             List<String> tab = new ArrayList<>();
             if(args.length == 1){
                 for(String sub : list){
