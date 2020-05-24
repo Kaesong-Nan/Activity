@@ -67,6 +67,7 @@ public class QuizManager {
 
         finish = true;
         right = null;
+        selected.clear();
         Bukkit.broadcastMessage(Language.WIN_PLAYER.replace("%player%", name).replace("%activity%", Config.QUIZ_ACTIVITY+""));
         manager.addActivity(name, ActivityTime.getDay(), Config.QUIZ_ACTIVITY);
     }
