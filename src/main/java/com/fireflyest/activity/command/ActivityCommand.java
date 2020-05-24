@@ -7,6 +7,7 @@ import com.fireflyest.activity.data.Language;
 import com.fireflyest.activity.data.YamlManager;
 import com.fireflyest.activity.manager.DataManager;
 import com.fireflyest.activity.manager.GuiManager;
+import com.fireflyest.activity.manager.QuizManager;
 import com.fireflyest.activity.manager.YmlManager;
 import com.fireflyest.activity.time.ActivityTime;
 import org.bukkit.Bukkit;
@@ -16,7 +17,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -105,13 +105,22 @@ public class ActivityCommand implements CommandExecutor {
                             "活跃度: "+activity + "  在线: " + ActivityConvert.convertTime(manager.getOnlineTime(args[1], Integer.parseInt(day)))
                     );
                 }
+            }else if(args[0].equalsIgnoreCase("quiz")){
+                if(player == null) { sender.sendMessage(Language.PLAYER_COMMAND); return true; }
+                QuizManager.selectOption(player, args[1]);
             }
         }else if(args.length == 3) {
             if(args[0].equalsIgnoreCase("add") && sender.hasPermission("activity.add")) {
                 manager.addChance(args[1], Integer.parseInt(args[2]));
                 sender.sendMessage(Language.ADD_CHANCE.replace("%player%", args[1]).replace("%amount%", args[2]));
             }
-        }else sender.sendMessage("正确用法§3" + cmd.getUsage());
+        }else {
+            String[] option = new String[args.length-2];
+            System.arraycopy(args, 2, option, 0, option.length);
+            if(args[0].equalsIgnoreCase("quiz") && sender.hasPermission("activity.quiz")) {
+                QuizManager.sendSingleQuiz(args[1], option);
+            }
+        }
         return true;
     }
 }

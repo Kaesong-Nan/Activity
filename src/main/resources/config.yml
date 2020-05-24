@@ -12,6 +12,9 @@ WeekendItem: MAP
 #任务进度条
 TaskProgress: true
 
+#活跃答题奖励积分
+QuizActivity: 1
+
 #普通签到奖励，随机取一，要多个奖励请使用kit
 #第一个奖励是运气不好给的
 Rewards:

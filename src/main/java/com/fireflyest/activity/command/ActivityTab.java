@@ -20,6 +20,7 @@ public class ActivityTab implements TabCompleter {
         list.add("task");
         list.add("playtime");
         list.add("data");
+        list.add("quiz");
     }
 
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args){
@@ -34,12 +35,24 @@ public class ActivityTab implements TabCompleter {
                     return null;
                 }else if("data".equalsIgnoreCase(args[0])){
                     return null;
+                }else if("quiz".equalsIgnoreCase(args[0])){
+                    tab.add("[问题]");
                 }
             }else if(args.length == 3){
                 if("add".equalsIgnoreCase(args[0])){
                     tab.add("<数量>");
                     tab.add("1");
                     tab.add("2");
+                }else if("quiz".equalsIgnoreCase(args[0])){
+                    tab.add("[正确选项]");
+                    tab.add("A");
+                    tab.add("B");
+                    tab.add("C");
+                    tab.add("D");
+                }
+            }else {
+                if("quiz".equalsIgnoreCase(args[0])){
+                    tab.add("[选项]");
                 }
             }
             return tab;

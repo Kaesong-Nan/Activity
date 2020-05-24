@@ -59,6 +59,16 @@ public class ActivityChat {
                 .create());
     }
 
+    public static void sendQuizOption(Player player, char option, String text){
+        player.spigot().sendMessage(new ComponentBuilder(LEFT)
+                .event(new HoverEvent( HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("点击选择").create()))
+                .event(new ClickEvent( ClickEvent.Action.RUN_COMMAND, "/activity quiz "+option))
+                .append(option+"").color(ChatColor.DARK_AQUA)
+                .append(RIGHT).color(ChatColor.WHITE)
+                .append(text)
+                .create());
+    }
+
     /**
      * 发送选项按钮,确认或取消
      * @param player 玩家

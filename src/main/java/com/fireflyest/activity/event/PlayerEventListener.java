@@ -26,6 +26,7 @@ public class PlayerEventListener implements Listener {
         ClickManager.iniClickManager(manager);
         RewardManager.iniRewardManager(manager);
         TaskManager.iniTaskManager(manager);
+        QuizManager.iniQuizManager(manager);
     }
 
     @EventHandler

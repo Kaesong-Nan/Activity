@@ -17,6 +17,7 @@ public class Config {
     public static boolean HEAD_SKIN;
     public static boolean TASK_PROGRESS;
     public static int DEFAULT_CHANCE;
+    public static int QUIZ_ACTIVITY;
     public static List<String>REWARDS;
     public static List<String> WEEKEND;
     public static String WEEKEND_ITEM;
@@ -37,6 +38,7 @@ public class Config {
         HEAD_SKIN = config.getBoolean("DisplaySkin");
         TASK_PROGRESS = config.getBoolean("TaskProgress");
         DEFAULT_CHANCE = config.getInt("DefaultChance");
+        QUIZ_ACTIVITY = config.getInt("QuizActivity");
         REWARDS = config.getStringList("Rewards");
         WEEKEND = config.getStringList("Weekend");
         WEEKEND_ITEM = config.getString("WeekendItem");

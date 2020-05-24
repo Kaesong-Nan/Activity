@@ -40,6 +40,11 @@ public class Language {
     public static String ACTIVITY_RANK;
     public static String SIGNIN_REWARD_LIMIT;
     public static String DAY_ACTIVITY;
+    public static String SELECT_OPTION;
+    public static String RIGHT_OPTION;
+    public static String FALSE_OPTION;
+    public static String WIN_PLAYER;
+    public static String SELECTED;
 
     public Language(FileConfiguration lang){
         this.lang = lang;
@@ -75,6 +80,11 @@ public class Language {
         ACTIVITY_RANK  = TITLE + lang.getString("ActivityRank").replace("&", "§");
         SIGNIN_REWARD_LIMIT  = TITLE + lang.getString("SignInRewardLimit").replace("&", "§");
         DAY_ACTIVITY  = TITLE + lang.getString("DayActivity").replace("&", "§");
+        SELECT_OPTION  = TITLE + lang.getString("SelectOption").replace("&", "§");
+        RIGHT_OPTION  = TITLE + lang.getString("RightOption").replace("&", "§");
+        FALSE_OPTION  = TITLE + lang.getString("FalseOption").replace("&", "§");
+        WIN_PLAYER  = TITLE + lang.getString("WinPlayer").replace("&", "§");
+        SELECTED  = TITLE + lang.getString("Selected").replace("&", "§");
     }
 
 }
