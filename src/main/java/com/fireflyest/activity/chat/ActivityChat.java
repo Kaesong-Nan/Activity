@@ -1,5 +1,6 @@
 package com.fireflyest.activity.chat;
 
+import com.fireflyest.activity.Activity;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
 import org.bukkit.entity.Player;
@@ -47,6 +48,15 @@ public class ActivityChat {
                 .event(new ClickEvent( ClickEvent.Action.RUN_COMMAND, command))
                 .event(new HoverEvent( HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hover).create()))
                 .append(RIGHT).color(ChatColor.WHITE).create());
+    }
+
+    public static void sendDayActivity(Player player, String day, String activity, String hover){
+        player.spigot().sendMessage(new ComponentBuilder(LEFT)
+                .append(day).color(ChatColor.GOLD)
+                .append(RIGHT).color(ChatColor.WHITE)
+                .append(activity).color(ChatColor.DARK_AQUA)
+                .event(new HoverEvent( HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hover).create()))
+                .create());
     }
 
     /**

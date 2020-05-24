@@ -19,6 +19,7 @@ public class ActivityTab implements TabCompleter {
         list.add("rank");
         list.add("task");
         list.add("playtime");
+        list.add("data");
     }
 
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args){
@@ -27,6 +28,18 @@ public class ActivityTab implements TabCompleter {
             if(args.length == 1){
                 for(String sub : list){
                     if(sub.contains(args[0]))tab.add(sub);
+                }
+            }else if(args.length == 2){
+                if("add".equalsIgnoreCase(args[0])){
+                    return null;
+                }else if("data".equalsIgnoreCase(args[0])){
+                    return null;
+                }
+            }else if(args.length == 3){
+                if("add".equalsIgnoreCase(args[0])){
+                    tab.add("<数量>");
+                    tab.add("1");
+                    tab.add("2");
                 }
             }
             return tab;

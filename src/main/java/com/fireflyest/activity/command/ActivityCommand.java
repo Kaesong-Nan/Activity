@@ -1,6 +1,8 @@
 package com.fireflyest.activity.command;
 
 import com.fireflyest.activity.Activity;
+import com.fireflyest.activity.chat.ActivityChat;
+import com.fireflyest.activity.convert.ActivityConvert;
 import com.fireflyest.activity.data.Language;
 import com.fireflyest.activity.data.YamlManager;
 import com.fireflyest.activity.manager.DataManager;
@@ -18,6 +20,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class ActivityCommand implements CommandExecutor {
 
@@ -85,6 +88,23 @@ public class ActivityCommand implements CommandExecutor {
             if(args[0].equalsIgnoreCase("add") && sender.hasPermission("activity.add")) {
                 manager.addChance(args[1], 1);
                 sender.sendMessage(Language.ADD_CHANCE.replace("%player%", args[1]).replace("%amount%", "1"));
+            }else if(args[0].equalsIgnoreCase("data")){
+                if(player == null) { sender.sendMessage(Language.PLAYER_COMMAND); return true; }
+                player.sendMessage(Language.DAY_ACTIVITY
+                        .replace("%days%", manager.getDayList(args[1]).size()+"")
+                        .replace("%activity%", manager.getTotalActivity(args[1])+"")
+                        .replace("%player%", args[1])
+                );
+                TreeSet<String>days = new TreeSet<>(manager.getDayList(args[1]));
+                for(String day: days){
+                    int activity = manager.getActivity(args[1], Integer.parseInt(day));
+                    ActivityChat.sendDayActivity(
+                            player,
+                            day,
+                            ActivityConvert.convertBar(activity),
+                            "活跃度: "+activity + "  在线: " + ActivityConvert.convertTime(manager.getOnlineTime(args[1], Integer.parseInt(day)))
+                    );
+                }
             }
         }else if(args.length == 3) {
             if(args[0].equalsIgnoreCase("add") && sender.hasPermission("activity.add")) {

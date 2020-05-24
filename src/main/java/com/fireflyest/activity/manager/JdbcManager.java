@@ -144,5 +144,10 @@ public class JdbcManager implements DataManager{
 
     }
 
+    @Override
+    public Set<String> getDayList(String name) {
+        return null;
+    }
+
 
 }

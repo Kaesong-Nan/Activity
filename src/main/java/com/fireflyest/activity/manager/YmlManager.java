@@ -203,5 +203,10 @@ public class YmlManager implements DataManager{
         YamlManager.setPlayerData(name, "SReward", rewards);
     }
 
+    @Override
+    public Set<String> getDayList(String name) {
+        return YamlManager.getPlayerDataKeys(name, "Days");
+    }
+
 
 }

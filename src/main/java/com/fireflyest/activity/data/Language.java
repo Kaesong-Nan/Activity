@@ -39,6 +39,7 @@ public class Language {
     public static String SIGN_IN_WEEKEND;
     public static String ACTIVITY_RANK;
     public static String SIGNIN_REWARD_LIMIT;
+    public static String DAY_ACTIVITY;
 
     public Language(FileConfiguration lang){
         this.lang = lang;
@@ -73,6 +74,7 @@ public class Language {
         SIGN_IN_WEEKEND = TITLE + lang.getString("SignInWeekend").replace("&", "§");
         ACTIVITY_RANK  = TITLE + lang.getString("ActivityRank").replace("&", "§");
         SIGNIN_REWARD_LIMIT  = TITLE + lang.getString("SignInRewardLimit").replace("&", "§");
+        DAY_ACTIVITY  = TITLE + lang.getString("DayActivity").replace("&", "§");
     }
 
 }

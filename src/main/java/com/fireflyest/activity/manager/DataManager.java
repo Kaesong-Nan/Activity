@@ -32,5 +32,6 @@ public interface DataManager {
     void addAReward(String name, String reward);
     void addPReward(String name, String reward);
     void addSReward(String name, String reward);
+    Set<String> getDayList(String name);
 
 }

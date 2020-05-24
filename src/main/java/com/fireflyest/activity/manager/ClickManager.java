@@ -96,6 +96,7 @@ public class ClickManager {
                     manager.updateTask(name, task);
                     manager.addActivity(name, ActivityTime.getDay(), activity);
                     player.sendMessage(Language.REWARD_TASK.replace("%task%", task).replace("%amount%", activity+""));
+                    player.playSound(player.getLocation(), "entity.player.levelup", 1, 1);
                 }
                 GuiManager.openTaskGui(player);
                 break;

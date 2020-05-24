@@ -109,8 +109,10 @@ public class OnlineManager {
     }
 
     public static void savePlayerTime(String name){
-        manager.addOnlineTime(name, ActivityTime.getDay(), getPlaytime(name));
-        login.put(name, ActivityTime.getDate());
+        if(manager.containsDay(name, ActivityTime.getDay())){
+            manager.addOnlineTime(name, ActivityTime.getDay(), getPlaytime(name));
+            login.put(name, ActivityTime.getDate());
+        }
     }
 
 }
