@@ -112,7 +112,8 @@ public class RewardManager {
                 return;
             }
             if(manager.hasSReward(name, reward)){
-
+                player.sendMessage(Language.SIGNIN_REWARD_LIMIT);
+                return;
             }
         }else {
             if(manager.getAddUp(name) < amount){
