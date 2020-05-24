@@ -56,7 +56,7 @@ public class RewardManager {
         manager.addAReward(name, reward);
         player.sendMessage(Language.EXCHANGE_SUCCESS);
         player.playSound(player.getLocation(), "entity.player.levelup", 1, 1);
-        serverCommand(Config.getActivityString(reward+".Reward"));
+        serverCommand(Config.getActivityString(reward+".Reward").replace("%player%", name));
     }
 
     /**
@@ -94,7 +94,7 @@ public class RewardManager {
         }
         player.sendMessage(Language.EXCHANGE_SUCCESS);
         player.playSound(player.getLocation(), "entity.player.levelup", 1, 1);
-        RewardManager.serverCommand(Config.getPlaytimeString(reward+".Reward"));
+        RewardManager.serverCommand(Config.getPlaytimeString(reward+".Reward").replace("%player%", name));
     }
 
     /**
@@ -124,7 +124,7 @@ public class RewardManager {
         manager.addSReward(name, reward);
         player.sendMessage(Language.EXCHANGE_SUCCESS);
         player.playSound(player.getLocation(), "entity.player.levelup", 1, 1);
-        RewardManager.serverCommand(Config.getSigninString(reward+".Reward"));
+        RewardManager.serverCommand(Config.getSigninString(reward+".Reward").replace("%player%", name));
     }
 
     /**
