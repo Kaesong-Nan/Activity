@@ -103,9 +103,13 @@ public class Config {
     }
 
     public static boolean containsTarget(String object, String target){
-        String[] o = config.getString("Object."+object).split(",");
-        for (String t : o){
-            if(target.equalsIgnoreCase(t))return true;
+        String obj = config.getString("Object."+object);
+        if(obj == null){
+            return target.equalsIgnoreCase(object);
+        }else {
+            for (String t : obj.split(",")){
+                if(target.equalsIgnoreCase(t))return true;
+            }
         }
         return false;
     }
