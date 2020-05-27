@@ -103,7 +103,7 @@ public class GuiManager {
      * @return 新容器
      */
     public static Inventory getNewGui(){
-        return getNewGui(Bukkit.createInventory(null, 54, "§f§l[§0Activity§f§l] §9签到界面"));
+        return getNewGui(Bukkit.createInventory(null, 54, Language.PLUGIN_NAME + " §9签到界面"));
     }
 
     public static Inventory getNewGui(Inventory old){

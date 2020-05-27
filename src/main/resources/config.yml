@@ -85,6 +85,7 @@ Activity:
     Reward: give %player% nether_star 1
 
 #签到奖励(至少保留一个)
+#Type 连续 累计
 Signin:
   连续3天:
     Loc: 11
@@ -118,6 +119,7 @@ Signin:
     Reward: give %player% creeper_head 1
 
 #在线奖励(至少保留一个)
+#Type 本月、持续 Time单位 分、时、天
 Playtime:
   在线8小时:
     Loc: 11

@@ -1,5 +1,6 @@
 package com.fireflyest.activity.event;
 
+import com.fireflyest.activity.data.Language;
 import com.fireflyest.activity.data.YamlManager;
 import com.fireflyest.activity.manager.*;
 import org.bukkit.Bukkit;
@@ -39,7 +40,7 @@ public class PlayerEventListener implements Listener {
     public void onInventoryClick(InventoryClickEvent event) {
         if(event.getCurrentItem() == null) return;
         Player player = (Player)event.getWhoClicked();
-        if(!event.getView().getTitle().contains("Activity")) return;
+        if(!event.getView().getTitle().contains(Language.PLUGIN_NAME)) return;
         event.setCancelled(true);
         ClickManager.playerClick(event.getCurrentItem(), player);
     }
