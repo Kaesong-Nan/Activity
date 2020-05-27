@@ -66,6 +66,10 @@ public class RewardManager {
      */
     public static void pReward(Player player, String reward){
         String name = player.getName();
+        if(manager.hasPReward(name, reward)){
+            player.sendMessage(Language.SIGNIN_REWARD_LIMIT);
+            return;
+        }
         String time = Config.getPlaytimeString(reward+".Time"), type = Config.getPlaytimeString(reward+".Type");
         long date = 1;
         if(time.contains("分")) { date = 1000*60; date *= Integer.parseInt(time.replace("分", "")); 	}
@@ -76,18 +80,10 @@ public class RewardManager {
                 player.sendMessage(Language.NOT_ENOUGH_PLAYTIME);
                 return;
             }
-            if(manager.hasPReward(name, reward)){
-                player.sendMessage(Language.SIGNIN_REWARD_LIMIT);
-                return;
-            }
             manager.addPReward(name, reward);
         }else {
             if(OnlineManager.getPlaytime(name) < date){
                 player.sendMessage(Language.NOT_ENOUGH_PLAYTIME);
-                return;
-            }
-            if(manager.hasPReward(name, reward)){
-                player.sendMessage(Language.SIGNIN_REWARD_LIMIT);
                 return;
             }
             OnlineManager.savePlayerTime(name);
