@@ -1,5 +1,6 @@
 package com.fireflyest.activity.manager;
 
+import com.fireflyest.activity.convert.ActivityConvert;
 import com.fireflyest.activity.data.Config;
 import com.fireflyest.activity.data.Language;
 import org.bukkit.Bukkit;
@@ -71,10 +72,7 @@ public class RewardManager {
             return;
         }
         String time = Config.getPlaytimeString(reward+".Time"), type = Config.getPlaytimeString(reward+".Type");
-        long date = 1;
-        if(time.contains("分")) { date = 1000*60; date *= Integer.parseInt(time.replace("分", "")); 	}
-        if(time.contains("时")) { date = 1000*60*60; date *= Integer.parseInt(time.replace("时", "")); }
-        if(time.contains("天")) { date = 1000*60*60*24; date *= Integer.parseInt(time.replace("天", "")); }
+        long date =ActivityConvert.convertTime(time);
         if("本月".equals(type)){
             if(manager.getTotalTime(name)+OnlineManager.getPlaytime(name) < date){
                 player.sendMessage(Language.NOT_ENOUGH_PLAYTIME);

@@ -44,6 +44,19 @@ public class ActivityConvert {
     }
 
     /**
+     * 将String类型时间转化为long
+     * @param time 时间
+     * @return date
+     */
+    public static long convertTime(String time) {
+        long date = 1;
+        if(time.contains("分")) { date = 1000*60; date *= Integer.parseInt(time.replace("分", "")); 	}
+        if(time.contains("时")) { date = 1000*60*60; date *= Integer.parseInt(time.replace("时", "")); }
+        if(time.contains("天")) { date = 1000*60*60*24; date *= Integer.parseInt(time.replace("天", "")); }
+        return date;
+    }
+
+    /**
      * 将位置转化为字符串
      * @param loc 位置
      * @return String

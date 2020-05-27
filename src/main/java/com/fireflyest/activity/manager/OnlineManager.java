@@ -2,6 +2,7 @@ package com.fireflyest.activity.manager;
 
 import com.fireflyest.activity.Activity;
 import com.fireflyest.activity.chat.ActivityChat;
+import com.fireflyest.activity.convert.ActivityConvert;
 import com.fireflyest.activity.data.Config;
 import com.fireflyest.activity.data.Language;
 import com.fireflyest.activity.time.ActivityTime;
@@ -42,10 +43,7 @@ public class OnlineManager {
                         if(manager.hasPReward(name, reward))continue;
                         //获取时间要求
                         String time = Config.getPlaytimeString(reward+".Time"), type = Config.getPlaytimeString(reward+".Type");
-                        long date = 1;
-                        if(time.contains("分")) { date = 1000*60; date *= Integer.parseInt(time.replace("分", "")); 	}
-                        if(time.contains("时")) { date = 1000*60*60; date *= Integer.parseInt(time.replace("时", "")); }
-                        if(time.contains("天")) { date = 1000*60*60*24; date *= Integer.parseInt(time.replace("天", "")); }
+                        long date = ActivityConvert.convertTime(time);
                         //判断是否符合要求
                         long has = "本月".equals(type) ? manager.getTotalTime(name)+OnlineManager.getPlaytime(name) : OnlineManager.getPlaytime(name);
                         if(has > date){
@@ -105,7 +103,6 @@ public class OnlineManager {
                     ActivityChat.sendCommandButton(player, "点击签到", "GREEN", "点击打开签到界面", "/activity");
                 }
                 cancel();
-                return;
             }
         }.runTaskLater(Activity.getProvidingPlugin(Activity.class), 20L);
     }
