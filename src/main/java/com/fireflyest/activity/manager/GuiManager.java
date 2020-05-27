@@ -31,9 +31,9 @@ public class GuiManager {
     //石头
     private static ItemStack stone = new ItemStack(Material.STONE);
 
-    public static Inventory ACTIVITY = Bukkit.createInventory(null, 54, "§f§l[§0Activity§f§l] §9活跃奖励");
-    public static Inventory SIGN_IN = Bukkit.createInventory(null, 54, "§f§l[§0Activity§f§l] §9签到奖励");
-    public static Inventory PLAYTIME = Bukkit.createInventory(null, 54, "§f§l[§0Activity§f§l] §9在线奖励");
+    public static Inventory ACTIVITY = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9活跃奖励");
+    public static Inventory SIGN_IN = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9签到奖励");
+    public static Inventory PLAYTIME = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9在线奖励");
 
     private static DataManager manager;
 
@@ -191,7 +191,7 @@ public class GuiManager {
     public static void updateTaskGui(Player player){
         String name = player.getName();
 
-        Inventory gui = tasks.containsKey(name) ? getNewGui(tasks.get(name)):Bukkit.createInventory(null, 54, "§f§l[§0Activity§f§l] §9任务列表");
+    Inventory gui = tasks.containsKey(name) ? getNewGui(tasks.get(name)):Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9任务列表");
 
         gui.clear();
 

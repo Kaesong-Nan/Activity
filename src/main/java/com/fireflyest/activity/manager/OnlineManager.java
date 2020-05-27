@@ -48,7 +48,7 @@ public class OnlineManager {
                         long has = "本月".equals(type) ? manager.getTotalTime(name)+OnlineManager.getPlaytime(name) : OnlineManager.getPlaytime(name);
                         if(has > date){
                             player.sendMessage(Language.PLAYTIME_REMIND);
-                            ActivityChat.sendCommandButton(player, "在线奖励", "GREEN", "点击查看在线奖励", "/activity playtime");
+                            ActivityChat.sendCommandButton(player, Language.BUTTON_PLAYTIME, "GREEN", "点击查看在线奖励", "/activity playtime");
                             break;
                         }
                     }
@@ -100,7 +100,7 @@ public class OnlineManager {
             public void run() {
                 if(!manager.containsDay(name, ActivityTime.getDay())) {
                     player.sendMessage(Language.SIGN_IN_REMIND);
-                    ActivityChat.sendCommandButton(player, "点击签到", "GREEN", "点击打开签到界面", "/activity");
+                    ActivityChat.sendCommandButton(player, Language.BUTTON_SIGNIN, "GREEN", "点击打开签到界面", "/activity");
                 }
                 cancel();
             }

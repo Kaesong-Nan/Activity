@@ -1,5 +1,8 @@
 Version: '2.0.0-SNAPSHOT'
+#显示在提示
 Title: '&6✦&f'
+#显示在界面
+PluginName: '&f&l[&0Activity&f&l]'
 Help:
   - '&e&m =                                             = '
   - '&b/activity                          &f - 打开菜单'
@@ -37,7 +40,7 @@ ExchangeSuccess: '&f成功领取奖励'
 RewardTask: '&f恭喜你成功完成任务 &3%task%，&f并获得活跃积分 &3%amount%'
 AddChance: '&f成功为&b %player% &f添加 &3%amount% &f次补签机会'
 FinishTask: '&f你已完成&3 %task% &f快点领取奖励吧!'
-ActivityRank: '&f活跃度排行拉取中...'
+ActivityRank: '&f今日活跃度排行'
 SignInRewardLimit: '&f你这个月已经领取过这个奖励了'
 DayActivity: '&f玩家&3%player%&f该月在线 &3%days% &f天，共 &3%activity% &f活跃度'
 SelectOption: '&f玩家&3%player%&f选择了选项 &3%option%'
@@ -45,3 +48,8 @@ RightOption: '&f你选择了正确的答案'
 FalseOption: '&f很遗憾你选错了'
 Selected: '&f你已经回答过这个问题了'
 WinPlayer: '&f玩家&3%player%&f抢答正确，获得活跃度 &3%activity%'
+
+#提示按钮
+ButtonSignIn: '点击签到'
+ButtonPlaytime: '在线奖励'
+ButtonTask: '活跃任务'

@@ -40,7 +40,7 @@ public class TaskManager {
                     manager.updateTask(name, task);
                     if("did".equalsIgnoreCase(manager.getTask(name, task).split(",")[2])){
                         player.sendMessage(Language.FINISH_TASK.replace("%task%", task));
-                        ActivityChat.sendCommandButton(player, "活跃任务", "GREEN", "点击领取奖励", "/activity task");
+                        ActivityChat.sendCommandButton(player, Language.BUTTON_TASK, "GREEN", "点击领取奖励", "/activity task");
                     }
                     break;
                 }

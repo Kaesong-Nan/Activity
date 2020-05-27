@@ -16,6 +16,7 @@ public class Language {
     public static List<String>HELP = new ArrayList<>();
     public static String VERSION;
     public static String TITLE;
+    public static String PLUGIN_NAME;
     public static String PLAYER_COMMAND;
     public static String RELOADING;
     public static String RELOADED;
@@ -45,6 +46,9 @@ public class Language {
     public static String FALSE_OPTION;
     public static String WIN_PLAYER;
     public static String SELECTED;
+    public static String BUTTON_SIGNIN;
+    public static String BUTTON_PLAYTIME;
+    public static String BUTTON_TASK;
 
     public Language(FileConfiguration lang){
         this.lang = lang;
@@ -56,6 +60,7 @@ public class Language {
         HELP = lang.getStringList("Help");
         DISPLAY_DAY = lang.getString("DisplayDay").replace("&", "§");
         TITLE = lang.getString("Title").replace("&", "§");
+        PLUGIN_NAME = lang.getString("PluginName").replace("&", "§");
         PLAYER_COMMAND = TITLE + lang.getString("PlayerCommand").replace("&", "§");
         RELOADING = TITLE + lang.getString("Reloading").replace("&", "§");
         RELOADED = TITLE + lang.getString("Reloaded").replace("&", "§");
@@ -85,6 +90,9 @@ public class Language {
         FALSE_OPTION  = TITLE + lang.getString("FalseOption").replace("&", "§");
         WIN_PLAYER  = TITLE + lang.getString("WinPlayer").replace("&", "§");
         SELECTED  = TITLE + lang.getString("Selected").replace("&", "§");
+        BUTTON_SIGNIN =  lang.getString("ButtonSignIn").replace("&", "§");
+        BUTTON_PLAYTIME =  lang.getString("ButtonPlaytime").replace("&", "§");
+        BUTTON_TASK =  lang.getString("ButtonTask").replace("&", "§");
     }
 
 }
