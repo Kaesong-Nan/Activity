@@ -37,6 +37,7 @@ public class Language {
     public static String REWARD_TASK;
     public static String ADD_CHANCE;
     public static String FINISH_TASK;
+    public static String ADD_TASK;
     public static String SIGN_IN_WEEKEND;
     public static String ACTIVITY_RANK;
     public static String SIGNIN_REWARD_LIMIT;
@@ -49,6 +50,11 @@ public class Language {
     public static String BUTTON_SIGNIN;
     public static String BUTTON_PLAYTIME;
     public static String BUTTON_TASK;
+    public static String MAIN_GUI;
+    public static String ACTIVITY_GUI;
+    public static String SIGNIN_GUI;
+    public static String PLAYTIME_GUI;
+    public static String TASK_GUI;
 
     public Language(FileConfiguration lang){
         this.lang = lang;
@@ -60,6 +66,11 @@ public class Language {
         HELP = lang.getStringList("Help");
         DISPLAY_DAY = lang.getString("DisplayDay").replace("&", "§");
         TITLE = lang.getString("Title").replace("&", "§");
+        MAIN_GUI = lang.getString("MainGui").replace("&", "§");
+        ACTIVITY_GUI = lang.getString("ActivityGui").replace("&", "§");
+        SIGNIN_GUI = lang.getString("SignInGui").replace("&", "§");
+        PLAYTIME_GUI = lang.getString("PlaytimeGui").replace("&", "§");
+        TASK_GUI = lang.getString("TaskGui").replace("&", "§");
         PLUGIN_NAME = lang.getString("PluginName").replace("&", "§");
         PLAYER_COMMAND = TITLE + lang.getString("PlayerCommand").replace("&", "§");
         RELOADING = TITLE + lang.getString("Reloading").replace("&", "§");
@@ -81,6 +92,7 @@ public class Language {
         REWARD_TASK = TITLE + lang.getString("RewardTask").replace("&", "§");
         ADD_CHANCE = TITLE + lang.getString("AddChance").replace("&", "§");
         FINISH_TASK  = TITLE + lang.getString("FinishTask").replace("&", "§");
+        ADD_TASK  = TITLE + lang.getString("AddTask").replace("&", "§");
         SIGN_IN_WEEKEND = TITLE + lang.getString("SignInWeekend").replace("&", "§");
         ACTIVITY_RANK  = TITLE + lang.getString("ActivityRank").replace("&", "§");
         SIGNIN_REWARD_LIMIT  = TITLE + lang.getString("SignInRewardLimit").replace("&", "§");

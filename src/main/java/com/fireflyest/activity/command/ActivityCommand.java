@@ -113,6 +113,10 @@ public class ActivityCommand implements CommandExecutor {
             if(args[0].equalsIgnoreCase("add") && sender.hasPermission("activity.add")) {
                 manager.addChance(args[1], Integer.parseInt(args[2]));
                 sender.sendMessage(Language.ADD_CHANCE.replace("%player%", args[1]).replace("%amount%", args[2]));
+            } else if(args[0].equalsIgnoreCase("task") && sender.hasPermission("activity.task")) {
+                manager.addTask(args[1], args[2], 0+"");
+                Player target = Bukkit.getPlayer(args[1]);
+                if(target != null)target.sendMessage(Language.ADD_TASK.replace("%task%", args[2]));
             }
         }else {
             String[] option = new String[args.length-2];

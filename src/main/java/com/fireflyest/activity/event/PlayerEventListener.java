@@ -60,13 +60,13 @@ public class PlayerEventListener implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         Player player = event.getPlayer();
-        TaskManager.doTask(player, event.getBlock().getType().name(), "开采");
+        TaskManager.doTask(player, event.getBlock().getType().name(), "⚒");
     }
 
     @EventHandler
     public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
         if(!event.getRightClicked().getType().isAlive())return;
-        TaskManager.doTask(event.getPlayer(), event.getRightClicked().getName(), "交谈");
+        TaskManager.doTask(event.getPlayer(), event.getRightClicked().getName(), "☻");
     }
 
     @EventHandler
@@ -75,7 +75,7 @@ public class PlayerEventListener implements Listener {
         if(!event.getEntity().getType().isAlive())return;
         LivingEntity entity = (LivingEntity)event.getEntity();
         if(entity.getHealth() - event.getDamage() > 0)return;
-        TaskManager.doTask((Player)event.getDamager(), entity.getType().name().toUpperCase(), "击杀");
+        TaskManager.doTask((Player)event.getDamager(), entity.getType().name().toUpperCase(), "⚔");
     }
 
 }

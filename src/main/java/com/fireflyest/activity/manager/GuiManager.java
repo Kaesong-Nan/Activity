@@ -31,9 +31,9 @@ public class GuiManager {
     //石头
     private static ItemStack stone = new ItemStack(Material.STONE);
 
-    public static Inventory ACTIVITY = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9活跃奖励");
-    public static Inventory SIGN_IN = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9签到奖励");
-    public static Inventory PLAYTIME = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9在线奖励");
+    public static Inventory ACTIVITY = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " " + Language.ACTIVITY_GUI);
+    public static Inventory SIGN_IN = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " " + Language.SIGNIN_GUI);
+public static Inventory PLAYTIME = Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " " + Language.PLAYTIME_GUI);
 
     private static DataManager manager;
 
@@ -103,7 +103,7 @@ public class GuiManager {
      * @return 新容器
      */
     public static Inventory getNewGui(){
-        return getNewGui(Bukkit.createInventory(null, 54, Language.PLUGIN_NAME + " §9签到界面"));
+        return getNewGui(Bukkit.createInventory(null, 54, Language.PLUGIN_NAME + " " + Language.MAIN_GUI));
     }
 
     public static Inventory getNewGui(Inventory old){
@@ -191,7 +191,7 @@ public class GuiManager {
     public static void updateTaskGui(Player player){
         String name = player.getName();
 
-    Inventory gui = tasks.containsKey(name) ? getNewGui(tasks.get(name)):Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " §9任务列表");
+        Inventory gui = tasks.containsKey(name) ? getNewGui(tasks.get(name)):Bukkit.createInventory(null, 54, Language.PLUGIN_NAME+ " " + Language.TASK_GUI);
 
         gui.clear();
 
@@ -253,7 +253,7 @@ public class GuiManager {
         }
         //设置参数
         ActivityItem.setDisplayName(item, "§r"+item.getItemMeta().getDisplayName()+"§0 "+day);
-        ActivityItem.setLore(item, 2, Language.DISPLAY_DAY.replace("%month%", ActivityTime.getMonth()+"").replace("%day%", day+""));
+        ActivityItem.setLore(item, 1, Language.DISPLAY_DAY.replace("%month%", ActivityTime.getMonth()+"").replace("%day%", day+""));
         gui.addItem(item);
     }
 

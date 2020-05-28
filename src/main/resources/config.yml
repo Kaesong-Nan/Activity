@@ -119,43 +119,43 @@ Signin:
     Reward: give %player% creeper_head 1
 
 #在线奖励(至少保留一个)
-#Type 本月、持续 Time单位 分、时、天
+#Type 本月、持续 Time单位 M、H、D
 Playtime:
   在线8小时:
     Loc: 11
     Item: BRICKS
     Type: 本月
-    Time: 8时
+    Time: 8H
     Reward: give %player% gold_ingot 25
   在线3天:
     Loc: 13
     Item: IRON_BLOCK
     Type: 本月
-    Time: 3天
+    Time: 3D
     Reward: give %player% emerald 16
   在线一周:
     Loc: 15
     Item: GOLD_BLOCK
     Type: 本月
-    Time: 7天
+    Time: 7D
     Reward: give %player% elytra 1
   在线半小时:
     Loc: 29
     Item: BRICK
     Type: 持续
-    Time: 30分
+    Time: 30M
     Reward: give %player% gold_ingot 6
   在线2小时:
     Loc: 31
     Item: IRON_INGOT
     Type: 持续
-    Time: 2时
+    Time: 2H
     Reward: give %player% diamond 5
   在线5小时:
     Loc: 33
     Item: GOLD_INGOT
     Type: 持续
-    Time: 5时
+    Time: 5H
     Reward: give %player% golden_apple 1
 
 #任务列表(至少保留一个, 第一个为新手任务)
@@ -163,49 +163,49 @@ Task:
   初来乍到:
     Item: SLIME_BALL
     Type: newly
-    Work: 交谈
+    Work: ☻
     Target: 守护者
     Progress: 1
     Reward: 10
   勤劳矿工:
     Item: DIAMOND_ORE
     Type: daily
-    Work: 开采
+    Work: ⚒
     Target: DIAMOND_ORE
     Progress: 10
     Reward: 10
   勤劳伐木:
     Item: OAK_LOG
     Type: daily
-    Work: 开采
+    Work: ⚒
     Target: 原木
     Progress: 10
     Reward: 10
   亡灵杀手:
     Item: BONE
     Type: daily
-    Work: 击杀
+    Work: ⚔
     Target: 亡灵
     Progress: 10
     Reward: 10
   猎空杀手:
     Item: ELYTRA
     Type: daily
-    Work: 击杀
+    Work: ⚔
     Target: 飞行
     Progress: 10
     Reward: 10
   发家致富:
     Item: OAK_LOG
     Type: normal
-    Work: 开采
+    Work: ⚒
     Target: 原木
     Progress: 10
     Reward: 10
   我的家园:
     Item: SLIME_BALL
     Type: normal
-    Work: 指令
+    Work: ◈
     Target: Plot
     Progress: 1
     Reward: 10

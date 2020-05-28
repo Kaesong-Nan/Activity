@@ -13,6 +13,7 @@ Help:
   - '&b/activity playtime               &f - 在线奖励'
   - '&b/activity add [p] <a>           &f - 补签机会'
   - '&b/activity quiz [q] [r] [o]       &f - 活跃抢答'
+  - '&b/activity task [p] [task]       &f - 活跃抢答'
   - '&9其中&7p&9表示玩家，&7a&9表示数量，&7<>&9表示可选，&7[]&9表示必填'
   - '&9其中&7q&9表示问题题目，&7r&9表示正确的选项(A,B,C,...)，&7o&9表示选项(至少两个)'
   - '&e&m =                                             = '
@@ -23,6 +24,7 @@ Reloaded: '&f配置文件重载完成!'
 #菜单显示的日期 %month%是月 %day%是日
 DisplayDay: '&r%month%&e&l月&r%day%&e&l日'
 
+#提示信息
 FaultSignIn: '&f很遗憾没办法签到'
 SignInFestival: '&f祝你%festival%快乐!'
 PlaytimeRemind: '&f在线奖励可以领取快去看看吧'
@@ -40,6 +42,7 @@ ExchangeSuccess: '&f成功领取奖励'
 RewardTask: '&f恭喜你成功完成任务 &3%task%，&f并获得活跃积分 &3%amount%'
 AddChance: '&f成功为&b %player% &f添加 &3%amount% &f次补签机会'
 FinishTask: '&f你已完成&3 %task% &f快点领取奖励吧!'
+AddTask: '&f你接受了任务 &3 %task%'
 ActivityRank: '&f今日活跃度排行'
 SignInRewardLimit: '&f你这个月已经领取过这个奖励了'
 DayActivity: '&f玩家&3%player%&f该月在线 &3%days% &f天，共 &3%activity% &f活跃度'
@@ -53,3 +56,11 @@ WinPlayer: '&f玩家&3%player%&f抢答正确，获得活跃度 &3%activity%'
 ButtonSignIn: '点击签到'
 ButtonPlaytime: '在线奖励'
 ButtonTask: '活跃任务'
+
+#菜单名称
+MainGui: '§9签到界面'
+ActivityGui: '§9活跃礼包'
+SignInGui: '§9签到奖励'
+PlaytimeGui: '§9在线奖励'
+TaskGui: '§9任务列表'
+

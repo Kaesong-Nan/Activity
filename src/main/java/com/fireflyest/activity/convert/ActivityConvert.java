@@ -50,9 +50,9 @@ public class ActivityConvert {
      */
     public static long convertTime(String time) {
         long date = 1;
-        if(time.contains("分")) { date = 1000*60; date *= Integer.parseInt(time.replace("分", "")); 	}
-        if(time.contains("时")) { date = 1000*60*60; date *= Integer.parseInt(time.replace("时", "")); }
-        if(time.contains("天")) { date = 1000*60*60*24; date *= Integer.parseInt(time.replace("天", "")); }
+        if(time.contains("M")) { date = 1000*60; date *= Integer.parseInt(time.replace("M", "")); 	}
+        if(time.contains("H")) { date = 1000*60*60; date *= Integer.parseInt(time.replace("H", "")); }
+        if(time.contains("D")) { date = 1000*60*60*24; date *= Integer.parseInt(time.replace("D", "")); }
         return date;
     }
 

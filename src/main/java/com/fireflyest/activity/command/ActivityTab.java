@@ -1,5 +1,6 @@
 package com.fireflyest.activity.command;
 
+import com.fireflyest.activity.data.Config;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -35,6 +36,8 @@ public class ActivityTab implements TabCompleter {
                     return null;
                 }else if("data".equalsIgnoreCase(args[0])){
                     return null;
+                }else if("task".equalsIgnoreCase(args[0])){
+                    return null;
                 }else if("quiz".equalsIgnoreCase(args[0])){
                     tab.add("[问题]");
                 }
@@ -49,6 +52,9 @@ public class ActivityTab implements TabCompleter {
                     tab.add("B");
                     tab.add("C");
                     tab.add("D");
+                }else if("task".equalsIgnoreCase(args[0])){
+                    tab.add("[任务名称]");
+                    tab.addAll(Config.TASK);
                 }
             }else {
                 if("quiz".equalsIgnoreCase(args[0])){
