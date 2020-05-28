@@ -14,6 +14,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.server.PluginDisableEvent;
 import org.bukkit.event.server.ServerLoadEvent;
 
 public class PlayerEventListener implements Listener {
@@ -55,6 +56,14 @@ public class PlayerEventListener implements Listener {
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
         OnlineManager.savePlayerTime(event.getPlayer().getName());
+    }
+
+    @EventHandler
+    public void onPluginDisable(PluginDisableEvent event) {
+        if(!event.getPlugin().getName().equals("Activity"))return;
+        for(Player player : Bukkit.getOnlinePlayers()) {
+            OnlineManager.savePlayerTime(player.getName());
+        }
     }
 
     @EventHandler

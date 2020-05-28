@@ -40,6 +40,9 @@ public class ActivityConvert {
         long hour = (time - day * dd)/ hh;
         long minute = (time - day * dd - hour * hh )/ mi;
         long second = (time - day * dd - hour * hh - minute * mi )/ ss;
+        if(time < 60000)return second+"秒";
+        if(time < 3600000)return minute+"分"+second+"秒";
+        if(time < 86400000)return hour+"时"+minute+"分"+second+"秒";
         return day+"天"+hour+"时"+minute+"分"+second+"秒";
     }
 
