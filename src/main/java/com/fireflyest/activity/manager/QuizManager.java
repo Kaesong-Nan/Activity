@@ -29,7 +29,11 @@ public class QuizManager {
     }
 
     public static void sendSingleQuiz(String quiz, String... option){
+        //初始化问题
         finish = false;
+        right = null;
+        selected.clear();
+
         Bukkit.broadcastMessage(Language.TITLE + quiz);
         for(Player player : Bukkit.getOnlinePlayers()){
             char i = 'A';
@@ -62,12 +66,12 @@ public class QuizManager {
             player.sendMessage(Language.FALSE_OPTION);
             return;
         }
+
         //判断是否被抢答
         if(finish)return;
 
+        //设置已被抢答
         finish = true;
-        right = null;
-        selected.clear();
         Bukkit.broadcastMessage(Language.WIN_PLAYER.replace("%player%", name).replace("%activity%", Config.QUIZ_ACTIVITY+""));
         manager.addActivity(name, ActivityTime.getDay(), Config.QUIZ_ACTIVITY);
     }
