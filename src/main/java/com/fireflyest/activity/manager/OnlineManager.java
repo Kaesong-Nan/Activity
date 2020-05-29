@@ -102,6 +102,9 @@ public class OnlineManager {
                     player.sendMessage(Language.SIGN_IN_REMIND);
                     ActivityChat.sendCommandButton(player, Language.BUTTON_SIGNIN, "GREEN", "点击打开签到界面", "/activity");
                 }
+                //添加界面
+                GuiManager.updatePlayerGui(player);
+                GuiManager.updateTaskGui(player);
                 cancel();
             }
         }.runTaskLater(Activity.getProvidingPlugin(Activity.class), 20L);

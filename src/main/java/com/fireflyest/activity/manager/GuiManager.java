@@ -107,12 +107,11 @@ public static Inventory PLAYTIME = Bukkit.createInventory(null, 54, Language.PLU
     }
 
     public static Inventory getNewGui(Inventory old){
-        Inventory gui = old;
-        gui.clear();
-        for(int i = 7 ; i <= 53 ; i+=9) { gui.setItem(i, items.getOrDefault("Blank", stone)); }
-        gui.setItem(44, items.getOrDefault("Blank", stone));
-        gui.setItem(53, items.getOrDefault("Close", stone));
-        return gui;
+        old.clear();
+        for(int i = 7 ; i <= 53 ; i+=9) { old.setItem(i, items.getOrDefault("Blank", stone)); }
+        old.setItem(44, items.getOrDefault("Blank", stone));
+        old.setItem(53, items.getOrDefault("Close", stone));
+        return old;
     }
 
     /**
@@ -262,22 +261,22 @@ public static Inventory PLAYTIME = Bukkit.createInventory(null, 54, Language.PLU
      * @param player 玩家
      */
     public static void openGui(Player player){
+        player.openInventory(guis.get(player.getName()));
         new BukkitRunnable() {
             @Override
             public void run() {
                 updatePlayerGui(player);
-                player.openInventory(guis.get(player.getName()));
                 cancel();
             }
         }.runTask(Activity.getProvidingPlugin(Activity.class));
     }
 
     public static void openTaskGui(Player player){
+        player.openInventory(tasks.get(player.getName()));
         new BukkitRunnable() {
             @Override
             public void run() {
                 updateTaskGui(player);
-                player.openInventory(tasks.get(player.getName()));
                 cancel();
             }
         }.runTask(Activity.getProvidingPlugin(Activity.class));
